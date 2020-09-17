@@ -8,6 +8,7 @@
     "sourceMap": true,
     "pretty": true,
     "removeComments": true,
+    "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "preserveConstEnums": true,
