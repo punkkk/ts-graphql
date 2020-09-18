@@ -48,7 +48,8 @@
     "reflect-metadata": "0.1.13",
     "source-map-support": "0.5.19",
     "type-graphql": "1.0.0",
-    "typedi": "0.8.0"
+    "typedi": "0.8.0",
+    "typeorm": "0.2.26"
   },
   "lint-staged": {
     "*.ts": [
