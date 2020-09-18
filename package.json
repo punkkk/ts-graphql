@@ -47,7 +47,8 @@
     "class-validator": "0.12.2",
     "reflect-metadata": "0.1.13",
     "source-map-support": "0.5.19",
-    "type-graphql": "1.0.0"
+    "type-graphql": "1.0.0",
+    "typedi": "0.8.0"
   },
   "lint-staged": {
     "*.ts": [
