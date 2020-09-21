@@ -1,6 +1,6 @@
 import * as casual from "casual";
 
-import {Greeter} from "../src/resolvers/sample/sample-resolver";
+import {Greeter} from "../src/resolvers/books/books-resolver";
 
 describe("Greeter", () => {
   it("should greet anything", () => {

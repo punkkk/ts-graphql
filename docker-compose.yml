@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./db_data:/var/lib/mysql
+#      - ./docker-entrypoint:/docker-entrypoint-initdb.d
+#      - ./mysqlconf:/etc/mysql/conf.d
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: qwerty
+    ports:
+      - 3307:3306
+    command: mysqld
+  api:
+    container_name: api
+    build: .
+    ports:
+      - 1337:1337
+#    volumes:
+#      - ./configs:/opt/app/configs

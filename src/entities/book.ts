@@ -8,14 +8,14 @@ import {Lazy} from "../types";
 export class Book {
   @Field((type) => ID)
   @PrimaryGeneratedColumn()
-  readonly id: number;
+  readonly id!: number;
 
   @Field()
   @Column()
-  name: string;
+  title!: string;
 
   @ManyToMany((type) => Author, (author) => author.books, {lazy: true})
   @JoinTable()
   @Field((type) => [Author])
-  authors: Lazy<Author[]>;
+  authors!: Lazy<Author[]>;
 }
