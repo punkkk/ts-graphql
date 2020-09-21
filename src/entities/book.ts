@@ -15,7 +15,7 @@ export class Book {
   name: string;
 
   @ManyToMany((type) => Author, (author) => author.books, {lazy: true})
-  @JoinTable
+  @JoinTable()
   @Field((type) => [Author])
   authors: Lazy<Author[]>;
 }
