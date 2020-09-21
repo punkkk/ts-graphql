@@ -1,5 +1,5 @@
 import {Field, ID, ObjectType} from "type-graphql";
-import {Entity, PrimaryGeneratedColumn, Column, ManyToMany} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "typeorm";
 import {Author} from "./author";
 import {Lazy} from "../types";
 
@@ -15,6 +15,7 @@ export class Book {
   name: string;
 
   @ManyToMany((type) => Author, (author) => author.books, {lazy: true})
+  @JoinTable
   @Field((type) => [Author])
   authors: Lazy<Author[]>;
 }

@@ -1,1 +1,1 @@
-export type Lazy<T extends Record<string, unknown>> = Promise<T> | T;
+export type Lazy<T> = Promise<T> | T;
