@@ -1,13 +1,14 @@
 import "reflect-metadata";
-import { ApolloServer } from "apollo-server";
-import * as path from "path";
-import { buildSchema } from "type-graphql";
 
+import * as path from "path";
+
+import { ApolloServer } from "apollo-server";
+import { buildSchema } from "type-graphql";
+import { Container } from "typedi";
 import * as TypeORM from "typeorm";
 
-import { BooksResolver } from "./resolvers";
-import { Container } from "typedi";
 import { Author, Book } from "./entities";
+import { BooksResolver } from "./resolvers";
 
 // register 3rd party IOC container
 TypeORM.useContainer(Container);

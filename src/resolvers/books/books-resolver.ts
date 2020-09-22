@@ -1,10 +1,11 @@
-import { Resolver, Query, Arg, Int, Mutation } from "type-graphql";
+import { Arg, Int, Mutation, Query, Resolver } from "type-graphql";
 import { Service } from "typedi";
 import { Repository } from "typeorm";
-import { Author, Book } from "../../entities";
 import { InjectRepository } from "typeorm-typedi-extensions";
-import { BookInput } from "./types/book-input";
+
+import { Author, Book } from "../../entities";
 import { AuthorInput } from "./types/author-input";
+import { BookInput } from "./types/book-input";
 
 @Service()
 @Resolver((of) => Book)

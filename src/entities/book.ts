@@ -1,7 +1,8 @@
 import { Field, ID, ObjectType } from "type-graphql";
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from "typeorm";
-import { Author } from "./author";
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+
 import { Lazy } from "../types";
+import { Author } from "./author";
 
 @ObjectType()
 @Entity()
