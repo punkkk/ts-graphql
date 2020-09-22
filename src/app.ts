@@ -1,13 +1,13 @@
 import "reflect-metadata";
-import {ApolloServer} from "apollo-server";
+import { ApolloServer } from "apollo-server";
 import * as path from "path";
-import {buildSchema} from "type-graphql";
+import { buildSchema } from "type-graphql";
 
 import * as TypeORM from "typeorm";
 
-import {BooksResolver} from "./resolvers";
-import {Container} from "typedi";
-import {Author, Book} from "./entities";
+import { BooksResolver } from "./resolvers";
+import { Container } from "typedi";
+import { Author, Book } from "./entities";
 
 // register 3rd party IOC container
 TypeORM.useContainer(Container);
@@ -48,7 +48,7 @@ async function bootstrap() {
     });
 
     // Start the server
-    const {url} = await server.listen(1337);
+    const { url } = await server.listen(1337);
     console.log(`Server is running, GraphQL Playground available at ${url}`);
   } catch (e) {
     console.error("error", e);

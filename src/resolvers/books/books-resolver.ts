@@ -1,10 +1,10 @@
-import {Resolver, Query, Arg, Int, Mutation} from "type-graphql";
-import {Service} from "typedi";
-import {Repository} from "typeorm";
-import {Author, Book} from "../../entities";
-import {InjectRepository} from "typeorm-typedi-extensions";
-import {BookInput} from "./types/book-input";
-import {AuthorInput} from "./types/author-input";
+import { Resolver, Query, Arg, Int, Mutation } from "type-graphql";
+import { Service } from "typedi";
+import { Repository } from "typeorm";
+import { Author, Book } from "../../entities";
+import { InjectRepository } from "typeorm-typedi-extensions";
+import { BookInput } from "./types/book-input";
+import { AuthorInput } from "./types/author-input";
 
 @Service()
 @Resolver((of) => Book)
@@ -14,12 +14,12 @@ export class BooksResolver {
     @InjectRepository(Author) private readonly authorsRepository: Repository<Author>,
   ) {}
 
-  @Query((returns) => Book, {nullable: true})
+  @Query((returns) => Book, { nullable: true })
   async book(@Arg("bookId", (type) => Int) bookId: number) {
     return this.booksRepository.findOne(bookId);
   }
 
-  @Query((returns) => [Book], {nullable: true})
+  @Query((returns) => [Book], { nullable: true })
   async books() {
     return this.booksRepository.find();
   }

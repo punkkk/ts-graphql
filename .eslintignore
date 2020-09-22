@@ -3,3 +3,4 @@ coverage
 build
 *.config.js
 .eslintrc.cjs
+db_data
